@@ -158,7 +158,7 @@ export default function App() {
     form.append("resume", file);
     setLoading(true);
     try {
-      const { data } = await axios.post("https://username-space-name.hf.space/api/analyze", form, {
+      const { data } = await axios.post("https://hussain23-my-ai-backend.hf.space/api/analyze", form, {
         headers: { "Content-Type": "multipart/form-data" },
         timeout: 120000,
       });
