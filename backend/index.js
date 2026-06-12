@@ -7,7 +7,15 @@ import pdf from "pdf-parse";
 const app = express();
 const PORT = process.env.PORT || 7860;
 
-app.use(cors());
+const corsOptions = {
+  origin: "*",
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: false
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));  // preflight
 app.use(express.json());
 
 const upload = multer({
